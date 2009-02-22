@@ -1,0 +1,17 @@
+body {
+	text-align: center;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+#wraper {
+	text-align: left;
+	margin: 0 auto;
+	width: 50%;
+}
+.placeholder {
+	background: #eee;
+	color: #bbb;
+}
+.anotherPlaceholder {
+	background: #E3EFB3;
+	color: blue;
+}
