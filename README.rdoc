@@ -3,19 +3,19 @@
 This is a simple jquery plugin for placeholder.
 
 =Example Usage
+	
+	$(document).ready(function(){
+		$(".holder").placeholder({
+			message: "Your place holder here."
+		});	
+	});
 
-$(document).ready(function(){
-	$(".holder").placeholder({
-		message: "Your place holder here."
-	});	
-});
-
-$(document).ready(function(){
-	$(".holder").placeholder({
-		message: "Your place holder here."
-		style: 'another_css_class'
-	});	
-});
+	$(document).ready(function(){
+		$(".holder").placeholder({
+			message: "Your place holder here."
+			style: 'another_css_class'
+		});	
+	});
 	
 Your html:
 	<h1>Test placeholder</h1>
