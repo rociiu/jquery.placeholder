@@ -1,3 +1,20 @@
 =jquery.placeholder
-This is a simple jquery plugin .
+
+This is a simple jquery plugin for placeholder.
+
+=Example Usage
+
+	$(document).ready(function(){
+		$(".holder").placeholder({
+			message: "Your place holder here."
+		});	
+	});
+
+Your html:
+	<h1>Test placeholder</h1>
+	<input type="text" name="test" class="holder"></input>
+
+
+
+
 

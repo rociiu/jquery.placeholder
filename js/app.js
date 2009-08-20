@@ -1,5 +1,5 @@
 $(document).ready(function(){
 	$(".holder").placeholder({
-		message: "hello.."
+		message: "Your place holder here."
 	});	
 });
