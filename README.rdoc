@@ -21,6 +21,8 @@ Your html:
 	<h1>Test placeholder</h1>
 	<input type="text" name="test" class="holder"></input>
 
+Or use the HTML5 placeholder attribute:
+        <input type="text" name="test" class="holder" placeholder="HTML5 is cool"></input>        
 
 Options:
 	message: the holder text, default is "click to enter.."
