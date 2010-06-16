@@ -4,7 +4,9 @@
 		var options = $.extend({}, $.fn.placeholder.defaultOptions, opt);
 
 		return this.each(function(){
-			setHolder($(this), options);
+			if ($(this).val() == '') {
+			  setHolder($(this), options);
+		  }
 
 			$(this).blur(function(){
 				if($(this).val() == '')
