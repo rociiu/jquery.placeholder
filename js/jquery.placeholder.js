@@ -4,22 +4,29 @@
 		var options = $.extend({}, $.fn.placeholder.defaultOptions, opt);
 
 		return this.each(function(){
-			if ($(this).val() == '') {
-			  setHolder($(this), options);
-		  }
+			var $item = $(this);
 
-			$(this).blur(function(){
-				if($(this).val() == '')
-				{
-					setHolder($(this), options);
+			if ($item.val() == '') {
+			  setHolder($item, options);
+			}
+
+			$item.blur(function(){
+				if($item.val() == '') {
+					setHolder($item, options);
 				}
 			});
 
-			$(this).focus(function(){
-				if($(this).val() == ($(this).attr("placeholder") || options.message)) {
-					$(this).val('');
+			$item.focus(function(){
+				if($item.val() == ($item.attr("placeholder") || options.message)) {
+					$item.val('');
 				}
-				$(this).removeClass(options.style);
+				$item.removeClass(options.style);
+			});
+
+			$item.parents("form:first").submit(function(){
+				if($item.val() == ($item.attr("placeholder") || options.message)) {
+					$item.val('');
+				}
 			})
 		});
 	};
@@ -30,16 +37,16 @@
 	}
 
 	$.fn.placeholder.defaultOptions = {
-                message: "click to enter..",
+		message: "click to enter..",
 		style: "placeholder"
 	}
 
 })(jQuery);
 
 jQuery.log = function(message) {
-  if(window.console) {
-     console.debug(message);
-  } else {
-     alert(message);
-  }
+	if(window.console) {
+		console.debug(message);
+	} else {
+		alert(message);
+	}
 };
