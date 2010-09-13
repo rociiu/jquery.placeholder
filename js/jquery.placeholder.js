@@ -23,11 +23,21 @@
 				$item.removeClass(options.style);
 			});
 
-			$item.parents("form:first").submit(function(){
+			// this is a very hackish way to append to the event bubble
+			$item.parents("form:first").one('submit', function(event) {
+				$(this).submit(function(){
+					setHolder($item, options);
+				});
+				event.stopImmediatePropagation();
+				$(this).trigger('submit');
+				return false;
+			});
+
+			$item.parents("form:first").submit(function(event){
 				if($item.val() == ($item.attr("placeholder") || options.message)) {
 					$item.val('');
 				}
-			})
+			});
 		});
 	};
 
